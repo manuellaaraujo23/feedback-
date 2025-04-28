@@ -1,7 +1,18 @@
 import iconStar from "../assets/icon-star.svg"
 import { InputButton } from "./InputButton"
 
-export function CardInicial ({handleChangeRateNote, handleSubmit}) {
+export function CardInicial ({setRateNote, setSubmited, rateNote}) {
+    
+  function handleSubmit(){
+    if(rateNote !== 0){
+      setSubmited(true)
+      return
+    }
+   
+    alert("Please,choose a rate button!")
+
+ }
+
     return (
         <div className="bg-radial-gradient max-w-103 px-6 pt-6 pb-8 rounded-2xl font-overpass">
         
@@ -13,11 +24,11 @@ export function CardInicial ({handleChangeRateNote, handleSubmit}) {
         <p className="text-light-grey text-sm leading-1 mb-6">Please let us know how we did your suport request. All feedback is appreciated to help us improve our offering!</p>
  
         <div className="flex justify-between mb-6">
-          <InputButton value={1} handleChangeRateNote={handleChangeRateNote}/>
-          <InputButton value={2} handleChangeRateNote={handleChangeRateNote}/>
-          <InputButton value={3} handleChangeRateNote={handleChangeRateNote}/>
-          <InputButton value={4} handleChangeRateNote={handleChangeRateNote}/>
-          <InputButton value={5} handleChangeRateNote={handleChangeRateNote}/>
+          <InputButton value={1} setRateNote={setRateNote}/>
+          <InputButton value={2} setRateNote={setRateNote}/>
+          <InputButton value={3} setRateNote={setRateNote}/>
+          <InputButton value={4} setRateNote={setRateNote}/>
+          <InputButton value={5} setRateNote={setRateNote}/>
          
         </div>
  
